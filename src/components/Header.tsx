@@ -38,17 +38,17 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
 
   return (
     <>
-      <div className="hidden bg-primary-900 text-white sm:block">
-        <div className="container-max flex min-h-9 items-center justify-between gap-4 text-xs">
+      <div className="bg-primary-900 text-white">
+        <div className="container-max flex min-h-9 items-center justify-between gap-3 py-2 text-[10px] sm:text-xs">
           <span className="flex items-center gap-2 text-white/85">
             <ShieldCheck className="h-3.5 w-3.5 text-accent-400" />
-            A customer-first approach to everyday banking
+            Student-created academic prototype · Not an official Bank Windhoek service
           </span>
           <a
             href={officialHome}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 font-semibold text-white transition hover:text-accent-300"
+            className="hidden items-center gap-1.5 font-semibold text-white transition hover:text-accent-300 sm:inline-flex"
           >
             Visit the official Bank Windhoek website
             <ArrowUpRight className="h-3.5 w-3.5" />

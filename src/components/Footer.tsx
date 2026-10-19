@@ -56,7 +56,7 @@ export default function Footer({ onNavigate }: FooterProps) {
           <h2 className="text-sm font-bold uppercase tracking-[0.14em] text-white">Official sources</h2>
           <div className="mt-4 space-y-3 text-sm text-white/70">
             <a href={officialHome} target="_blank" rel="noopener noreferrer" className="flex items-start gap-2 transition hover:text-white"><Landmark className="mt-0.5 h-4 w-4 flex-shrink-0" /><span>Bank Windhoek website</span></a>
-            <a href="https://www.bankwindhoek.com.na/Pages/News/default.aspx" target="_blank" rel="noopener noreferrer" className="flex items-start gap-2 transition hover:text-white"><ShieldCheck className="mt-0.5 h-4 w-4 flex-shrink-0" /><span>News and safety information</span></a>
+            <a href="https://www.bankwindhoek.com.na/Pages/News/bank-windhoek-becomes-first-bank-in-namibia-to-launch-whatsapp-banking.aspx" target="_blank" rel="noopener noreferrer" className="flex items-start gap-2 transition hover:text-white"><ShieldCheck className="mt-0.5 h-4 w-4 flex-shrink-0" /><span>WhatsApp Banking announcement</span></a>
             <a href="mailto:200965085@students.unam.na" className="flex items-start gap-2 transition hover:text-white"><Mail className="mt-0.5 h-4 w-4 flex-shrink-0" /><span>Academic project contact</span></a>
             <span className="flex items-start gap-2"><MapPin className="mt-0.5 h-4 w-4 flex-shrink-0" /><span>Windhoek, Namibia</span></span>
           </div>
