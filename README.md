@@ -15,13 +15,13 @@ An academic website prototype for the Mobile Journalism module (H2612CJ). The si
 
 Requires Node.js and npm.
 
-\`\`\`sh
+```sh
 npm install
 npm run dev
 npm run typecheck
 npm run lint
 npm run build
-\`\`\`
+```
 
 ## Important note
 
