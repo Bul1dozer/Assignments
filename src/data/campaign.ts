@@ -64,7 +64,7 @@ export const campaignInfo = {
   ],
   brandColors: {
     primary: '#0033A0',
-    accent: '#E8A020',
+    accent: '#E30613',
     white: '#FFFFFF',
     dark: '#001133',
   },

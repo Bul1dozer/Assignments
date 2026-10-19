@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Header, { type PageId } from '@/components/Header';
 import Footer from '@/components/Footer';
 import HomePage from '@/pages/HomePage';
-import CategoryPage from '@/pages/CategoryPage';
+import BankingPage from '@/pages/BankingPage';
 import CampaignPage from '@/pages/CampaignPage';
 import ContactPage from '@/pages/ContactPage';
 import ArticleView from '@/components/ArticleView';
@@ -31,28 +31,22 @@ function App() {
     switch (currentPage) {
       case 'home':
         return <HomePage onNavigate={handleNavigate} />;
-      case 'national':
-        return <CategoryPage category="National" onNavigate={handleNavigate} />;
-      case 'international':
-        return <CategoryPage category="International" onNavigate={handleNavigate} />;
-      case 'sports':
-        return <CategoryPage category="Sports" onNavigate={handleNavigate} />;
-      case 'entertainment':
-        return (
-          <CategoryPage category="Entertainment" onNavigate={handleNavigate} />
-        );
+      case 'personal':
+      case 'business':
+      case 'corporate':
+      case 'digital':
+        return <BankingPage page={currentPage} onNavigate={handleNavigate} />;
       case 'campaign':
         return <CampaignPage onNavigate={handleNavigate} />;
       case 'contact':
         return <ContactPage />;
       case 'article': {
-        const article = currentArticleId
-          ? getArticleById(currentArticleId)
-          : undefined;
-        if (article) {
-          return <ArticleView article={article} onNavigate={handleNavigate} />;
-        }
-        return <HomePage onNavigate={handleNavigate} />;
+        const article = currentArticleId ? getArticleById(currentArticleId) : undefined;
+        return article ? (
+          <ArticleView article={article} onNavigate={handleNavigate} />
+        ) : (
+          <HomePage onNavigate={handleNavigate} />
+        );
       }
       default:
         return <HomePage onNavigate={handleNavigate} />;
@@ -60,9 +54,9 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white flex flex-col">
+    <div className="min-h-screen bg-white font-sans text-slate-800">
       <Header currentPage={currentPage} onNavigate={handleNavigate} />
-      <main className="flex-1">{renderPage()}</main>
+      <main>{renderPage()}</main>
       <Footer onNavigate={handleNavigate} />
     </div>
   );

@@ -5,68 +5,92 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
   }
+
   body {
-    @apply font-sans text-slate-800 antialiased;
+    @apply bg-white font-sans text-slate-800 antialiased;
+    min-width: 320px;
   }
+
   h1, h2, h3, h4, h5 {
-    @apply font-serif;
+    @apply font-sans;
+  }
+
+  button, a, input, textarea, select {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  :focus-visible {
+    outline: 3px solid #e30613;
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: #0033a0;
+    color: #fff;
   }
 }
 
 @layer components {
   .container-max {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
   }
+
   .container-narrow {
-    @apply max-w-3xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply mx-auto max-w-3xl px-4 sm:px-6 lg:px-8;
   }
+
   .article-prose {
-    @apply text-slate-700 leading-[1.7] text-[1.0625rem];
+    @apply text-[1.0625rem] leading-[1.8] text-slate-700;
   }
+
   .article-prose p {
     @apply mb-5;
   }
+
   .article-prose h2 {
-    @apply text-2xl font-bold text-slate-900 mt-10 mb-4;
+    @apply mb-4 mt-10 text-2xl font-bold text-slate-900;
   }
+
   .article-prose h3 {
-    @apply text-xl font-bold text-slate-800 mt-8 mb-3;
+    @apply mb-3 mt-8 text-xl font-bold text-slate-800;
   }
+
   .article-prose a {
     @apply text-primary-600 underline underline-offset-2 hover:text-primary-700;
   }
+
   .article-prose strong {
     @apply font-semibold text-slate-900;
   }
+
   .article-prose blockquote {
-    @apply border-l-4 border-primary-500 pl-5 italic text-slate-600 my-6 text-lg;
+    @apply my-6 border-l-4 border-accent-500 pl-5 text-lg italic text-slate-600;
   }
+
   .article-prose ul {
-    @apply list-disc pl-6 mb-5 space-y-2;
+    @apply mb-5 list-disc space-y-2 pl-6;
   }
+
   .article-prose li {
     @apply leading-[1.7];
   }
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: #f1f5f9;
 }
+
 ::-webkit-scrollbar-thumb {
-  background: #0d7377;
+  background: #0033a0;
   border-radius: 4px;
 }
-::-webkit-scrollbar-thumb:hover {
-  background: #084547;
-}
 
-/* Selection color */
-::selection {
-  background: #0d7377;
-  color: white;
+::-webkit-scrollbar-thumb:hover {
+  background: #e30613;
 }

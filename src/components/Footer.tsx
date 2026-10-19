@@ -1,134 +1,77 @@
-import { Building2, Mail, Phone, Globe, Facebook, Instagram, Twitter } from 'lucide-react';
+import {
+  ArrowUpRight,
+  Facebook,
+  Instagram,
+  Landmark,
+  Mail,
+  MapPin,
+  ShieldCheck,
+  Twitter,
+} from 'lucide-react';
 import type { PageId } from './Header';
 
 interface FooterProps {
   onNavigate: (page: PageId) => void;
 }
 
+const officialHome = 'https://www.bankwindhoek.com.na/Pages/default.aspx';
+
 export default function Footer({ onNavigate }: FooterProps) {
-  const year = new Date().getFullYear();
-
   return (
-    <footer className="bg-primary-900 text-primary-100 mt-20">
-      <div className="container-max py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Brand */}
-          <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-primary-500 text-white">
-                <Building2 className="w-5 h-5" />
-              </div>
-              <span className="font-serif font-bold text-lg text-white">The Namibian Times</span>
-            </div>
-            <p className="text-sm text-primary-200 leading-relaxed">
-              A mobile-first digital news publication covering Namibia and the world,
-              committed to accurate, verified, and accessible journalism.
-            </p>
-          </div>
-
-          {/* Quick links */}
-          <div>
-            <h4 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">Sections</h4>
-            <ul className="space-y-2 text-sm">
-              {[
-                { id: 'home' as PageId, label: 'Home' },
-                { id: 'national' as PageId, label: 'National News' },
-                { id: 'international' as PageId, label: 'International News' },
-                { id: 'sports' as PageId, label: 'Sports' },
-                { id: 'entertainment' as PageId, label: 'Entertainment' },
-              ].map((link) => (
-                <li key={link.id}>
-                  <button
-                    onClick={() => onNavigate(link.id)}
-                    className="text-primary-200 hover:text-white transition-colors"
-                  >
-                    {link.label}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Campaign links */}
-          <div>
-            <h4 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">Campaign</h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <button
-                  onClick={() => onNavigate('campaign')}
-                  className="text-primary-200 hover:text-white transition-colors"
-                >
-                  Banking Where You Are Portfolio
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => onNavigate('contact')}
-                  className="text-primary-200 hover:text-white transition-colors"
-                >
-                  Contact Us
-                </button>
-              </li>
-            </ul>
-            <div className="flex gap-3 mt-4">
-              <a
-                href="https://facebook.com/bankwindhoek"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-primary-800 flex items-center justify-center hover:bg-primary-700 transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook className="w-4 h-4" />
-              </a>
-              <a
-                href="https://instagram.com/bankwindhoek"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-primary-800 flex items-center justify-center hover:bg-primary-700 transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram className="w-4 h-4" />
-              </a>
-              <a
-                href="https://x.com/bankwindhoek"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-primary-800 flex items-center justify-center hover:bg-primary-700 transition-colors"
-                aria-label="Twitter / X"
-              >
-                <Twitter className="w-4 h-4" />
-              </a>
-            </div>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h4 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">Contact</h4>
-            <ul className="space-y-3 text-sm text-primary-200">
-              <li className="flex items-start gap-2">
-                <Mail className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <span>200965085@students.unam.na</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Phone className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <span>0816270080</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Globe className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <span>www.bankwindhoek.com.na</span>
-              </li>
-            </ul>
-          </div>
+    <footer className="bg-primary-950 text-white">
+      <div className="container-max grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-[1.4fr_0.8fr_0.8fr_1fr] lg:py-16">
+        <div>
+          <button type="button" onClick={() => onNavigate('home')} className="flex items-center gap-3 text-left">
+            <span className="flex h-11 w-11 items-center justify-center rounded-full bg-accent-500 text-xl font-bold text-white">W</span>
+            <span>
+              <span className="block text-lg font-bold">Bank Windhoek</span>
+              <span className="mt-1 block text-[10px] uppercase tracking-[0.16em] text-white/55">Academic project prototype</span>
+            </span>
+          </button>
+          <p className="mt-5 max-w-sm text-sm leading-6 text-white/65">
+            A Mobile Journalism website concept exploring how bank communication can make digital services easier to understand, safer to use and more relevant to everyday life.
+          </p>
         </div>
 
-        <div className="border-t border-primary-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-primary-300">
-            &copy; {year} The Namibian Times. An academic project by Willemina T. Alfons
-            (200965085) for Mobile Journalism (H2612CJ), {year}.
-          </p>
-          <p className="text-xs text-primary-300">
-            Photography via Pexels. Articles are educational content.
-          </p>
+        <div>
+          <h2 className="text-sm font-bold uppercase tracking-[0.14em] text-white">Explore</h2>
+          <ul className="mt-4 space-y-3 text-sm text-white/70">
+            <li><button type="button" onClick={() => onNavigate('personal')} className="transition hover:text-white">Personal banking</button></li>
+            <li><button type="button" onClick={() => onNavigate('business')} className="transition hover:text-white">Business banking</button></li>
+            <li><button type="button" onClick={() => onNavigate('corporate')} className="transition hover:text-white">Corporate & institutional</button></li>
+            <li><button type="button" onClick={() => onNavigate('digital')} className="transition hover:text-white">Digital banking</button></li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 className="text-sm font-bold uppercase tracking-[0.14em] text-white">Campaign</h2>
+          <ul className="mt-4 space-y-3 text-sm text-white/70">
+            <li><button type="button" onClick={() => onNavigate('campaign')} className="transition hover:text-white">Banking Where You Are</button></li>
+            <li><button type="button" onClick={() => onNavigate('contact')} className="transition hover:text-white">Contact & information</button></li>
+            <li><a href={officialHome} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 transition hover:text-white">Official website <ArrowUpRight className="h-3.5 w-3.5" /></a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 className="text-sm font-bold uppercase tracking-[0.14em] text-white">Official sources</h2>
+          <div className="mt-4 space-y-3 text-sm text-white/70">
+            <a href={officialHome} target="_blank" rel="noopener noreferrer" className="flex items-start gap-2 transition hover:text-white"><Landmark className="mt-0.5 h-4 w-4 flex-shrink-0" /><span>Bank Windhoek website</span></a>
+            <a href="https://www.bankwindhoek.com.na/Pages/News/default.aspx" target="_blank" rel="noopener noreferrer" className="flex items-start gap-2 transition hover:text-white"><ShieldCheck className="mt-0.5 h-4 w-4 flex-shrink-0" /><span>News and safety information</span></a>
+            <a href="mailto:200965085@students.unam.na" className="flex items-start gap-2 transition hover:text-white"><Mail className="mt-0.5 h-4 w-4 flex-shrink-0" /><span>Academic project contact</span></a>
+            <span className="flex items-start gap-2"><MapPin className="mt-0.5 h-4 w-4 flex-shrink-0" /><span>Windhoek, Namibia</span></span>
+          </div>
+          <div className="mt-5 flex gap-3">
+            <a href="https://facebook.com/bankwindhoek" target="_blank" rel="noopener noreferrer" aria-label="Bank Windhoek on Facebook" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/75 transition hover:bg-white/10 hover:text-white"><Facebook className="h-4 w-4" /></a>
+            <a href="https://instagram.com/bankwindhoek" target="_blank" rel="noopener noreferrer" aria-label="Bank Windhoek on Instagram" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/75 transition hover:bg-white/10 hover:text-white"><Instagram className="h-4 w-4" /></a>
+            <a href="https://x.com/bankwindhoek" target="_blank" rel="noopener noreferrer" aria-label="Bank Windhoek on X" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/75 transition hover:bg-white/10 hover:text-white"><Twitter className="h-4 w-4" /></a>
+          </div>
+        </div>
+      </div>
+
+      <div className="border-t border-white/10">
+        <div className="container-max flex flex-col gap-3 py-5 text-[11px] leading-5 text-white/50 sm:flex-row sm:items-center sm:justify-between">
+          <p>© {new Date().getFullYear()} · Mobile Journalism (H2612CJ) academic project.</p>
+          <p className="max-w-3xl">This is an independent student-created prototype, not an official Bank Windhoek website. No banking transactions or credential collection are provided.</p>
         </div>
       </div>
     </footer>
