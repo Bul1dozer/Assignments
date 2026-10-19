@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans text-slate-800 antialiased;
+  }
+  h1, h2, h3, h4, h5 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .container-max {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  .container-narrow {
+    @apply max-w-3xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  .article-prose {
+    @apply text-slate-700 leading-[1.7] text-[1.0625rem];
+  }
+  .article-prose p {
+    @apply mb-5;
+  }
+  .article-prose h2 {
+    @apply text-2xl font-bold text-slate-900 mt-10 mb-4;
+  }
+  .article-prose h3 {
+    @apply text-xl font-bold text-slate-800 mt-8 mb-3;
+  }
+  .article-prose a {
+    @apply text-primary-600 underline underline-offset-2 hover:text-primary-700;
+  }
+  .article-prose strong {
+    @apply font-semibold text-slate-900;
+  }
+  .article-prose blockquote {
+    @apply border-l-4 border-primary-500 pl-5 italic text-slate-600 my-6 text-lg;
+  }
+  .article-prose ul {
+    @apply list-disc pl-6 mb-5 space-y-2;
+  }
+  .article-prose li {
+    @apply leading-[1.7];
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #0d7377;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #084547;
+}
+
+/* Selection color */
+::selection {
+  background: #0d7377;
+  color: white;
+}
