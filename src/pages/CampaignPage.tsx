@@ -175,16 +175,6 @@ export default function CampaignPage({ onNavigate }: CampaignPageProps) {
         </button>
       </section>
 
-      {/* Academic notice strip */}
-      <div className="bg-accent-50 border-b border-accent-200 py-2.5">
-        <div className="container-max text-center">
-          <p className="text-xs text-accent-800 font-medium">
-            <strong>Academic Prototype Notice:</strong> This is a student-created
-            educational project. It is not an official Bank Windhoek website or service.
-          </p>
-        </div>
-      </div>
-
       {/* ================================================================
           SECTION C: CAMPAIGN INTRODUCTION
       ================================================================ */}
@@ -760,10 +750,10 @@ export default function CampaignPage({ onNavigate }: CampaignPageProps) {
 
           {/* Production status notice */}
           <div className="max-w-4xl mx-auto mt-8">
-            <div className="p-4 bg-warning-50 border border-warning-200 rounded-lg flex items-start gap-3">
-              <AlertTriangle className="w-5 h-5 text-warning-600 flex-shrink-0 mt-0.5" />
+            <div className="p-4 bg-slate-50 border border-slate-200 rounded-lg flex items-start gap-3">
+              <AlertTriangle className="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5" />
               <div>
-                <p className="text-sm font-bold text-warning-800 mb-1">Production Status</p>
+                <p className="text-sm font-bold text-slate-900 mb-1">Storyboard status</p>
                 <p className="text-xs text-slate-700 leading-relaxed">
                   This script and storyboard represent a production-ready plan. The video
                   has not yet been filmed, edited or exported. The element above is a
@@ -1038,10 +1028,10 @@ export default function CampaignPage({ onNavigate }: CampaignPageProps) {
                 ))}
               </div>
 
-              <div className="mt-6 p-4 bg-warning-50 border border-warning-200 rounded-lg flex items-start gap-3">
-                <AlertTriangle className="w-5 h-5 text-warning-600 flex-shrink-0 mt-0.5" />
+              <div className="mt-6 p-4 bg-slate-50 border border-slate-200 rounded-lg flex items-start gap-3">
+                <AlertTriangle className="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-sm font-bold text-warning-800 mb-1">Production Status</p>
+                  <p className="text-sm font-bold text-slate-900 mb-1">Storyboard status</p>
                   <p className="text-xs text-slate-700 leading-relaxed">
                     This script and storyboard represent a production-ready plan. The
                     video has not yet been filmed, edited or exported.
