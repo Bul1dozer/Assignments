@@ -23,7 +23,6 @@ export const campaignInfo = {
     name: 'Willemina T. Alfons',
     studentNumber: '200965085',
     email: '200965085@students.unam.na',
-    phone: '0816270080',
     campus: 'Windhoek Campus',
     course: 'Mobile Journalism',
     courseCode: 'H2612CJ',
@@ -263,7 +262,7 @@ export const multimediaScript = {
   script: [
     {
       time: '0:00\u20130:03',
-      shot: 'Close-up of a smartphone screen showing the Bank Windhoek WhatsApp Banking chat. A message pops up: "Your balance is N$ 2,450.00." Sound: notification chime.',
+      shot: 'Close-up of a smartphone with a clearly labelled illustrative banking-chat mockup. A generic notification appears; do not show real account or customer data. Sound: notification chime.',
       narration: '(No narration. Sound design only.)',
       subtitle: '',
     },
@@ -281,9 +280,9 @@ export const multimediaScript = {
     },
     {
       time: '0:15\u20130:22',
-      shot: 'Screen recording style: WhatsApp Banking interface \u2014 checking balance, paying a beneficiary, buying airtime. Text overlays highlight each action.',
-      narration: 'Bank on WhatsApp. Check your balance. Pay. Buy airtime.',
-      subtitle: 'Bank on WhatsApp. Check your balance. Pay. Buy airtime.',
+      shot: 'Screen-recording-style mockup of an illustrative WhatsApp Banking conversation. Show a generic enquiry flow and clear text overlays; confirm supported features and the interface against verified guidance before filming.',
+      narration: 'Find everyday banking information through a familiar mobile channel.',
+      subtitle: 'Everyday banking information, in a familiar mobile channel.',
     },
     {
       time: '0:22\u20130:30',
