@@ -5,92 +5,61 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 7rem;
   }
-
   body {
-    @apply bg-white font-sans text-slate-800 antialiased;
-    min-width: 320px;
+    @apply font-sans text-slate-800 antialiased;
   }
-
   h1, h2, h3, h4, h5 {
-    @apply font-sans;
+    @apply font-serif;
   }
-
-  button, a, input, textarea, select {
-    -webkit-tap-highlight-color: transparent;
-  }
-
-  :focus-visible {
-    outline: 3px solid #e8a020;
-    outline-offset: 3px;
-  }
-
-  ::selection {
-    background: #0033a0;
-    color: #fff;
+  /* Visible focus indicators for accessibility */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary-500;
   }
 }
 
 @layer components {
   .container-max {
-    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
-
   .container-narrow {
-    @apply mx-auto max-w-3xl px-4 sm:px-6 lg:px-8;
-  }
-
-  .article-prose {
-    @apply text-[1.0625rem] leading-[1.8] text-slate-700;
-  }
-
-  .article-prose p {
-    @apply mb-5;
-  }
-
-  .article-prose h2 {
-    @apply mb-4 mt-10 text-2xl font-bold text-slate-900;
-  }
-
-  .article-prose h3 {
-    @apply mb-3 mt-8 text-xl font-bold text-slate-800;
-  }
-
-  .article-prose a {
-    @apply text-primary-600 underline underline-offset-2 hover:text-primary-700;
-  }
-
-  .article-prose strong {
-    @apply font-semibold text-slate-900;
-  }
-
-  .article-prose blockquote {
-    @apply my-6 border-l-4 border-accent-500 pl-5 text-lg italic text-slate-600;
-  }
-
-  .article-prose ul {
-    @apply mb-5 list-disc space-y-2 pl-6;
-  }
-
-  .article-prose li {
-    @apply leading-[1.7];
+    @apply max-w-3xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 }
 
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
-
 ::-webkit-scrollbar-track {
   background: #f1f5f9;
 }
-
 ::-webkit-scrollbar-thumb {
   background: #0033a0;
   border-radius: 4px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background: #e8a020;
+  background: #002266;
+}
+
+/* Selection color */
+::selection {
+  background: #0033a0;
+  color: white;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
