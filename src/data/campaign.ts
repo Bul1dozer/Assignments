@@ -9,16 +9,15 @@ export interface CampaignAsset {
   message: string;
   callToAction: string;
   filename: string;
-  status: 'Complete' | 'Draft' | 'In Review';
+  status: 'Concept' | 'Complete' | 'Draft' | 'In Review';
   caption: string;
 }
 
 export const campaignInfo = {
-  publicationName: 'The Namibian Times',
   campaignTitle: 'Banking Where You Are',
   tagline: 'Your bank. Your life. Your way.',
   institution: 'Bank Windhoek',
-  institutionFull: 'Bank Windhoek Limited — A Namibian Financial Institution',
+  institutionFull: 'A student-created Mobile Journalism campaign concept about everyday digital banking.',
   teamName: 'Willemina T. Alfons',
   studentInfo: {
     name: 'Willemina T. Alfons',
@@ -59,12 +58,12 @@ export const campaignInfo = {
   coreMessages: [
     'You have a busy life. Your banking should fit into it.',
     'Bank Windhoek\u2019s digital services make everyday banking simpler and more accessible.',
-    'WhatsApp Banking lets you bank through a platform you already use every day.',
+    'Use familiar mobile-first communication to understand available banking options.',
     'Digital banking does not mean losing human support — the phygital approach combines both.',
   ],
   brandColors: {
     primary: '#0033A0',
-    accent: '#E30613',
+    accent: '#E8A020',
     white: '#FFFFFF',
     dark: '#001133',
   },
@@ -80,11 +79,6 @@ export const campaignInfo = {
   ],
   contact: {
     email: '200965085@students.unam.na',
-    phone: '0816270080',
-    website: 'www.bankwindhoek.com.na',
-    facebook: 'facebook.com/bankwindhoek',
-    instagram: 'instagram.com/bankwindhoek',
-    twitter: 'x.com/bankwindhoek',
   },
 };
 
@@ -100,7 +94,7 @@ export const campaignAssets: CampaignAsset[] = [
     message: 'Banking Where You Are',
     callToAction: 'Your bank. Your life. Your way.',
     filename: '01_campaign_launch_poster.png',
-    status: 'Complete',
+    status: 'Concept',
     caption: 'The flagship campaign launch poster features the Bank Windhoek brand blue with the campaign name and tagline, establishing the campaign identity. The layout uses bold typography against a clean background, communicating confidence and accessibility.',
   },
   {
@@ -114,7 +108,7 @@ export const campaignAssets: CampaignAsset[] = [
     message: 'Ten goals. One mission. Banking that fits your life.',
     callToAction: 'Discover what Banking Where You Are means for you.',
     filename: '02_objectives_infographic.png',
-    status: 'Complete',
+    status: 'Concept',
     caption: 'This infographic visualises the campaign\u2019s ten objectives using numbered cards with icons, each representing a strategic goal from awareness to customer trust. The key message is prominently displayed, supported by the supporting messages below.',
   },
   {
@@ -128,7 +122,7 @@ export const campaignAssets: CampaignAsset[] = [
     message: 'You have a busy life. Your banking should fit into it.',
     callToAction: 'Share. Bank. Live. #BankingWhereYouAre',
     filename: '03_instagram_square.png',
-    status: 'Complete',
+    status: 'Concept',
     caption: 'A high-impact square graphic for Instagram feeds featuring the campaign line against Bank Windhoek blue. The bold typography and clean composition drive shares and saves, with the hashtag encouraging user participation.',
   },
   {
@@ -142,7 +136,7 @@ export const campaignAssets: CampaignAsset[] = [
     message: 'Five ways to bank with Bank Windhoek — wherever you are.',
     callToAction: 'Swipe to explore. Start banking today.',
     filename: '04_facebook_carousel.png',
-    status: 'Complete',
+    status: 'Concept',
     caption: 'A five-slide carousel introducing WhatsApp Banking, Mobile App, Online Banking, ATMs, and Digital Banking Hubs. Each slide features an icon, a short description, and the Bank Windhoek logo, designed for maximum shareability on Facebook.',
   },
   {
@@ -156,7 +150,7 @@ export const campaignAssets: CampaignAsset[] = [
     message: 'Bank Windhoek \u2014 Banking that fits your everyday life.',
     callToAction: 'Follow the campaign for tips and updates.',
     filename: '05_facebook_promo.png',
-    status: 'Complete',
+    status: 'Concept',
     caption: 'A landscape promotional graphic optimised for Facebook feed placement, featuring the campaign tagline and a compelling visual that connects digital convenience with the Bank Windhoek brand identity.',
   },
   {
@@ -170,7 +164,7 @@ export const campaignAssets: CampaignAsset[] = [
     message: 'Bank on WhatsApp. Bank Windhoek makes it simple.',
     callToAction: 'Save this number and start banking today.',
     filename: '06_whatsapp_poster.png',
-    status: 'Complete',
+    status: 'Concept',
     caption: 'Designed specifically for WhatsApp sharing, this vertical poster promotes WhatsApp Banking with a clear visual of the WhatsApp interface and Bank Windhoek branding, optimised for mobile viewing in chat applications.',
   },
   {
@@ -184,7 +178,7 @@ export const campaignAssets: CampaignAsset[] = [
     message: 'Banking Where You Are \u2014 Your bank. Your life. Your way.',
     callToAction: 'Click to explore digital banking.',
     filename: '07_digital_banner.png',
-    status: 'Complete',
+    status: 'Concept',
     caption: 'A leaderboard banner designed for digital advertising placement on Namibian news and community websites, featuring the campaign tagline and a clear click-through call to action with Bank Windhoek branding.',
   },
   {
@@ -196,9 +190,9 @@ export const campaignAssets: CampaignAsset[] = [
     format: 'Print-ready PDF',
     dimensions: 'A4 (210 \u00d7 297 mm, 300 DPI)',
     message: 'The future of banking is where you are.',
-    callToAction: 'Visit www.bankwindhoek.com.na to learn more.',
+    callToAction: 'Keep the message clear, accessible and easy to remember.',
     filename: '08_print_advertisement.pdf',
-    status: 'Complete',
+    status: 'Concept',
     caption: 'A full-page print advertisement designed for newspaper placement, combining the campaign narrative, WhatsApp Banking highlight, and Bank Windhoek institutional branding at print resolution with proper margins and bleed.',
   },
   {
@@ -212,7 +206,7 @@ export const campaignAssets: CampaignAsset[] = [
     message: 'Bank safely. Protect your personal and banking information.',
     callToAction: 'Follow these tips. Share with family.',
     filename: '09_safety_infographic.png',
-    status: 'Complete',
+    status: 'Concept',
     caption: 'A data-driven infographic presenting key digital banking safety tips \u2014 protecting PINs, recognising scams, using official channels, and verifying transactions \u2014 designed to build customer confidence and trust.',
   },
   {
@@ -226,7 +220,7 @@ export const campaignAssets: CampaignAsset[] = [
     message: 'Join the Banking Where You Are Community Day \u2014 November 22, 2026.',
     callToAction: 'Visit your nearest Bank Windhoek branch or Digital Banking Hub.',
     filename: '10_event_announcement.png',
-    status: 'Complete',
+    status: 'Concept',
     caption: 'An event announcement poster for the Banking Where You Are Community Day, featuring date, venue, and registration details, designed for cross-platform distribution across social media and WhatsApp.',
   },
   {
@@ -238,9 +232,9 @@ export const campaignAssets: CampaignAsset[] = [
     format: 'Print-ready PDF',
     dimensions: '850 \u00d7 2000 mm (vertical, 300 DPI)',
     message: 'Banking Where You Are \u2014 A Bank Windhoek Campaign',
-    callToAction: 'Visit www.bankwindhoek.com.na',
+    callToAction: 'Your bank. Your life. Your way.',
     filename: '11_pullup_banner.pdf',
-    status: 'Complete',
+    status: 'Concept',
     caption: 'A pull-up banner design for use at community events, branch launches, and public engagements, featuring the full campaign identity, digital channel highlights, and Bank Windhoek institutional branding.',
   },
   {
@@ -254,7 +248,7 @@ export const campaignAssets: CampaignAsset[] = [
     message: 'Your banking fits your life. Start today.',
     callToAction: 'Explore digital banking. #BankingWhereYouAre',
     filename: '12_cta_graphic.png',
-    status: 'Complete',
+    status: 'Concept',
     caption: 'A call-to-action graphic for the campaign\u2019s closing phase, encouraging customers to explore Bank Windhoek\u2019s digital channels and share their experience on social media with the campaign hashtag.',
   },
 ];
@@ -311,9 +305,9 @@ export const multimediaScript = {
     },
     {
       time: '0:42\u20130:45',
-      shot: 'End card persists. Small text: "Bank Windhoek. www.bankwindhoek.com.na"',
+      shot: 'End card persists with the campaign name and tagline. No external URL is shown.',
       narration: '(Music resolves. No narration.)',
-      subtitle: 'Visit www.bankwindhoek.com.na',
+      subtitle: 'Your bank. Your life. Your way.',
     },
   ],
   productionNotes: {

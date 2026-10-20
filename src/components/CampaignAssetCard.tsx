@@ -50,9 +50,9 @@ export default function CampaignAssetCard({ asset }: CampaignAssetCardProps) {
             <h3 className="font-serif font-semibold text-sm text-slate-900 leading-snug">
               {asset.id}. {asset.name}
             </h3>
-            {asset.status === 'Complete' && (
-              <CheckCircle className="w-4 h-4 text-success-500 flex-shrink-0 mt-0.5" />
-            )}
+            <span className="flex-shrink-0 rounded-full bg-slate-100 px-2 py-1 text-[10px] font-semibold text-slate-600">
+              Concept
+            </span>
           </div>
           <p className="text-xs text-slate-500 mb-2">{asset.dimensions}</p>
           <p className="text-sm text-slate-600 line-clamp-2">{asset.message}</p>
@@ -106,17 +106,9 @@ export default function CampaignAssetCard({ asset }: CampaignAssetCardProps) {
                 <SpecItem label="Main Message" value={asset.message} />
                 <SpecItem label="Call to Action" value={asset.callToAction} />
                 <SpecItem label="Export Filename" value={asset.filename} />
-                <SpecItem label="QC Status" value={asset.status} statusBadge />
+                <SpecItem label="Presentation status" value="Concept preview" statusBadge />
               </div>
 
-              <button
-                className="mt-6 w-full flex items-center justify-center gap-2 py-3 rounded-lg bg-primary-500 text-white font-medium text-sm hover:bg-primary-600 transition-colors"
-                disabled
-                title="Export files are part of the academic submission package"
-              >
-                <Download className="w-4 h-4" />
-                Included in submission package
-              </button>
             </div>
           </div>
         </div>
@@ -140,8 +132,7 @@ function SpecItem({
         {label}
       </p>
       {statusBadge ? (
-        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold bg-success-100 text-success-700">
-          <CheckCircle className="w-3 h-3" />
+        <span className="inline-flex items-center rounded-full bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600">
           {value}
         </span>
       ) : (

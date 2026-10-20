@@ -16,21 +16,16 @@ import {
   Shield,
   List,
 } from 'lucide-react';
-import type { PageId } from '@/components/Header';
 import { campaignInfo, campaignAssets, multimediaScript } from '@/data/campaign';
 import CampaignAssetCard from '@/components/CampaignAssetCard';
 
-interface CampaignPageProps {
-  onNavigate: (page: PageId) => void;
-}
-
-export default function CampaignPage({ onNavigate: _onNavigate }: CampaignPageProps) {
+export default function CampaignPage() {
   const [showScript, setShowScript] = useState(false);
 
   return (
-    <div className="pt-20">
+    <div>
       {/* Hero */}
-      <section className="relative bg-gradient-to-br from-primary-600 via-primary-700 to-primary-900 py-20 overflow-hidden">
+      <section id="campaign-overview" className="relative scroll-mt-28 bg-gradient-to-br from-primary-600 via-primary-700 to-primary-900 py-20 overflow-hidden">
         <div className="absolute top-10 right-10 w-72 h-72 bg-accent-400/15 rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary-400/20 rounded-full blur-3xl" />
         <div className="container-max relative z-10 text-center">
@@ -38,7 +33,7 @@ export default function CampaignPage({ onNavigate: _onNavigate }: CampaignPagePr
             <Building2 className="w-8 h-8 text-white" />
           </div>
           <span className="inline-block px-4 py-1 rounded-full bg-white/15 text-white text-xs font-semibold uppercase tracking-widest mb-4 animate-fade-up">
-            Campaign Portfolio
+            Mobile Journalism Campaign
           </span>
           <h1 className="font-serif font-bold text-4xl md:text-6xl text-white mb-4 animate-fade-up">
             Banking Where You Are
@@ -49,26 +44,19 @@ export default function CampaignPage({ onNavigate: _onNavigate }: CampaignPagePr
           <p className="text-sm text-primary-100 max-w-2xl mx-auto leading-relaxed animate-fade-up">
             {campaignInfo.institutionFull}
           </p>
-        </div>
-      </section>
-
-      {/* Student / Author info */}
-      <section className="py-8 bg-white border-b border-slate-100">
-        <div className="container-max">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-sm text-slate-600">
-            <span className="font-medium text-slate-800">{campaignInfo.studentInfo.name}</span>
-            <span className="hidden md:inline text-slate-300">|</span>
-            <span>Student No: {campaignInfo.studentInfo.studentNumber}</span>
-            <span className="hidden md:inline text-slate-300">|</span>
-            <span>{campaignInfo.studentInfo.course} ({campaignInfo.studentInfo.courseCode})</span>
-            <span className="hidden md:inline text-slate-300">|</span>
-            <span>{campaignInfo.studentInfo.assignment}, {campaignInfo.studentInfo.year}</span>
+          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+            <a href="#campaign-strategy" className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-bold text-primary-800 transition hover:bg-primary-50">
+              Explore the campaign <ArrowRight className="h-4 w-4" />
+            </a>
+            <a href="#campaign-assets" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/35 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
+              View creative assets
+            </a>
           </div>
         </div>
       </section>
 
-      {/* Team / Agency intro */}
-      <section className="py-12 bg-white">
+      {/* Project and institution context */}
+      <section id="campaign-about" className="scroll-mt-28 py-12 bg-white">
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Team */}
@@ -107,28 +95,24 @@ export default function CampaignPage({ onNavigate: _onNavigate }: CampaignPagePr
                 About Bank Windhoek
               </h2>
               <p className="text-sm text-slate-600 leading-relaxed mb-6">
-                Bank Windhoek is a Namibian financial institution that positions itself as a
-                "Connector of Positive Change." The Bank's 2025 Annual Report links its legitimacy
-                to consistent performance, compliance, customer service, and stakeholder inclusivity.
-                In April 2026, Bank Windhoek became the first bank in Namibia to launch WhatsApp
-                Banking, designed to make everyday banking simpler and more accessible. The Bank has
-                also developed a "phygital" approach that combines physical and digital banking,
-                recognising that customers want digital convenience alongside human support. The
-                Goreangab Mall Digital Banking Hub is an example of this approach, bringing banking
-                services closer to communities.
+                This academic campaign uses Bank Windhoek as the subject of a mobile-first
+                communication concept. It explores how clear, relatable storytelling can make the
+                topic of everyday digital banking easier to understand while keeping customer safety
+                and human support in view. The site is an educational campaign concept, not a banking
+                channel, and it does not verify current products, service availability or eligibility.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <div className="p-4 bg-primary-50 rounded-lg">
                   <p className="text-xs uppercase tracking-wider text-primary-600 font-semibold mb-1">
-                    Campaign Status
+                    Project Type
                   </p>
-                  <p className="text-sm font-bold text-primary-800">Active</p>
+                  <p className="text-sm font-bold text-primary-800">Academic concept</p>
                 </div>
                 <div className="p-4 bg-accent-50 rounded-lg">
                   <p className="text-xs uppercase tracking-wider text-accent-600 font-semibold mb-1">
-                    Assets Produced
+                    Creative Assets
                   </p>
-                  <p className="text-sm font-bold text-accent-800">12 Complete</p>
+                  <p className="text-sm font-bold text-accent-800">12 visual concepts</p>
                 </div>
               </div>
             </div>
@@ -137,7 +121,7 @@ export default function CampaignPage({ onNavigate: _onNavigate }: CampaignPagePr
       </section>
 
       {/* Brand Identity Section */}
-      <section className="py-12 bg-slate-50">
+      <section id="campaign-identity" className="scroll-mt-28 py-12 bg-slate-50">
         <div className="container-max">
           <div className="flex items-center gap-3 mb-8">
             <span className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary-100 text-primary-600">
@@ -148,7 +132,7 @@ export default function CampaignPage({ onNavigate: _onNavigate }: CampaignPagePr
                 Brand Identity & Visual Direction
               </h2>
               <p className="text-sm text-slate-500">
-                The campaign follows Bank Windhoek's approved corporate identity
+                Proposed visual direction for this academic campaign concept
               </p>
             </div>
           </div>
@@ -201,7 +185,7 @@ export default function CampaignPage({ onNavigate: _onNavigate }: CampaignPagePr
       </section>
 
       {/* Objectives & Audience */}
-      <section className="py-12 bg-white">
+      <section id="campaign-strategy" className="scroll-mt-28 py-12 bg-white">
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {/* Objective */}
@@ -252,7 +236,7 @@ export default function CampaignPage({ onNavigate: _onNavigate }: CampaignPagePr
       <section className="bg-gradient-to-r from-primary-600 to-primary-800 py-10">
         <div className="container-max text-center">
           <p className="text-xs uppercase tracking-widest text-accent-300 font-semibold mb-2">
-            Approved Campaign Tagline
+            Campaign tagline
           </p>
           <p className="font-serif font-bold text-3xl md:text-4xl text-white">
             {campaignInfo.tagline}
@@ -264,7 +248,7 @@ export default function CampaignPage({ onNavigate: _onNavigate }: CampaignPagePr
       </section>
 
       {/* Asset gallery */}
-      <section className="py-12 bg-slate-50">
+      <section id="campaign-assets" className="scroll-mt-28 py-12 bg-slate-50">
         <div className="container-max">
           <div className="flex items-center gap-3 mb-8">
             <span className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary-100 text-primary-600">
@@ -272,7 +256,7 @@ export default function CampaignPage({ onNavigate: _onNavigate }: CampaignPagePr
             </span>
             <div>
               <h2 className="font-serif font-bold text-2xl text-slate-900">Campaign Visual Assets</h2>
-              <p className="text-sm text-slate-500">12 completed designs across print, social media, and digital platforms</p>
+              <p className="text-sm text-slate-500">Twelve visual concepts with creative rationale and intended platform specifications</p>
             </div>
           </div>
 
@@ -285,7 +269,7 @@ export default function CampaignPage({ onNavigate: _onNavigate }: CampaignPagePr
       </section>
 
       {/* Asset Inventory Table */}
-      <section className="py-12 bg-white">
+      <section id="campaign-inventory" className="scroll-mt-28 py-12 bg-white">
         <div className="container-max">
           <div className="flex items-center gap-3 mb-8">
             <span className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary-100 text-primary-600">
@@ -352,8 +336,36 @@ export default function CampaignPage({ onNavigate: _onNavigate }: CampaignPagePr
         </div>
       </section>
 
+      {/* Safety and trust */}
+      <section id="campaign-safety" className="scroll-mt-28 bg-primary-950 py-12 text-white">
+        <div className="container-max">
+          <div className="max-w-3xl">
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-accent-300">Safety &amp; trust</p>
+            <h2 className="mt-3 font-serif text-3xl font-bold sm:text-4xl">Convenience should never come at the cost of security.</h2>
+            <p className="mt-4 text-sm leading-7 text-white/75">
+              Digital-banking safety is a core supporting theme in this campaign. These are general
+              awareness messages, not a substitute for current guidance from the bank.
+            </p>
+          </div>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { title: 'Keep credentials private', text: 'Never share your PIN, password or one-time password with another person.' },
+              { title: 'Check unexpected messages', text: 'Pause before opening unexpected links or acting on urgent requests for banking details.' },
+              { title: 'Verify the channel', text: 'Confirm that a banking contact or instruction comes from a trusted, verified source.' },
+              { title: 'Ask when unsure', text: 'If a request feels unusual, stop and seek help through a verified support channel.' },
+            ].map((tip) => (
+              <article key={tip.title} className="rounded-xl border border-white/10 bg-white/5 p-5">
+                <Shield className="h-5 w-5 text-accent-300" />
+                <h3 className="mt-4 text-base font-bold">{tip.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-white/70">{tip.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Multimedia section */}
-      <section className="py-12 bg-slate-50">
+      <section id="campaign-storyboard" className="scroll-mt-28 py-12 bg-slate-50">
         <div className="container-max">
           <div className="flex items-center gap-3 mb-8">
             <span className="flex items-center justify-center w-10 h-10 rounded-lg bg-accent-100 text-accent-600">
@@ -386,7 +398,7 @@ export default function CampaignPage({ onNavigate: _onNavigate }: CampaignPagePr
                   </div>
                   <div className="absolute bottom-6 left-0 right-0 text-center">
                     <p className="text-[10px] text-white/60 uppercase tracking-wider">Bank Windhoek</p>
-                    <p className="text-[10px] text-white/40 mt-1">www.bankwindhoek.com.na</p>
+                    <p className="text-[10px] text-white/55 mt-1">Banking Where You Are</p>
                   </div>
                 </div>
 
@@ -395,7 +407,7 @@ export default function CampaignPage({ onNavigate: _onNavigate }: CampaignPagePr
                 </div>
               </div>
               <p className="text-center text-xs text-slate-500 mt-3 italic">
-                Campaign video preview — 45-second vertical format for Instagram Reels, TikTok, WhatsApp Status &amp; YouTube Shorts
+                45-second vertical video concept · storyboard and production plan
               </p>
             </div>
 
@@ -429,14 +441,11 @@ export default function CampaignPage({ onNavigate: _onNavigate }: CampaignPagePr
                   Role in the Campaign
                 </h4>
                 <p className="text-xs text-slate-700 leading-relaxed">
-                  The video serves as the campaign's primary multimedia asset, designed for
-                  mobile-first consumption. It condenses the campaign's message — that banking
-                  should fit into everyday life — into 45 seconds of shareable content. It shows
-                  real Namibians using Bank Windhoek's WhatsApp Banking, the Mobile App, and the
-                  Goreangab Mall Digital Banking Hub, demonstrating the phygital approach. The
-                  vertical format ensures optimal viewing on smartphones, which are the primary
-                  access point for the target audience. Distributed across social media platforms,
-                  it drives awareness, engagement, and traffic to Bank Windhoek's digital channels.
+                  The proposed video is the campaign's primary multimedia concept, designed for
+                  mobile-first viewing. The 45-second storyboard shows how everyday situations can
+                  communicate the campaign message in a relatable way. The listed scenes are a
+                  production plan, not footage of actual customers or confirmation of specific
+                  product features. The vertical format is intended for short-form mobile platforms.
                 </p>
               </div>
 
@@ -506,12 +515,10 @@ export default function CampaignPage({ onNavigate: _onNavigate }: CampaignPagePr
               <div className="mt-6 p-4 bg-warning-50 border border-warning-200 rounded-lg flex items-start gap-3">
                 <CheckCircle className="w-5 h-5 text-warning-600 flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-sm font-bold text-warning-800 mb-1">Production Status</p>
+                  <p className="text-sm font-bold text-slate-800 mb-1">About this storyboard</p>
                   <p className="text-xs text-slate-700 leading-relaxed">
-                    This script and storyboard are production-ready. The remaining production task
-                    is filming, editing, and exporting the final video using mobile journalism
-                    techniques. Once produced, the video will be embedded via a supported player
-                    (e.g., YouTube or Instagram) on this page.
+                    This is the proposed script and shot plan for a 45-second campaign video. It is
+                    presented here as a planning deliverable; no completed video is embedded on this site.
                   </p>
                 </div>
               </div>
@@ -520,21 +527,16 @@ export default function CampaignPage({ onNavigate: _onNavigate }: CampaignPagePr
         </div>
       )}
 
-      {/* Contact CTA */}
+      {/* Project contact CTA */}
       <section className="py-12 bg-primary-50">
         <div className="container-max text-center">
-          <h2 className="font-serif font-bold text-2xl text-slate-900 mb-3">Get Involved in the Campaign</h2>
+          <h2 className="font-serif font-bold text-2xl text-slate-900 mb-3">Questions about the campaign?</h2>
           <p className="text-sm text-slate-600 max-w-xl mx-auto mb-6 leading-relaxed">
-            Have questions about the campaign, want to provide feedback, or need more information?
-            Reach out through the contact page.
+            Contact the student creator about the campaign proposal or this Mobile Journalism assignment.
           </p>
-          <button
-            onClick={() => _onNavigate('contact')}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-primary-500 text-white rounded-lg font-semibold text-sm hover:bg-primary-600 transition-all hover:scale-105"
-          >
-            Contact the Campaign Team
-            <ArrowRight className="w-4 h-4" />
-          </button>
+          <a href="#campaign-contact" className="inline-flex items-center gap-2 px-6 py-3 bg-primary-700 text-white rounded-lg font-semibold text-sm hover:bg-primary-800 transition-colors">
+            Project contact <ArrowRight className="w-4 h-4" />
+          </a>
         </div>
       </section>
     </div>
