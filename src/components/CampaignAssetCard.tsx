@@ -101,8 +101,8 @@ export default function CampaignAssetCard({ asset }: CampaignAssetCardProps) {
                 <SpecItem label="Dimensions" value={asset.dimensions} />
                 <SpecItem label="Main Message" value={asset.message} />
                 <SpecItem label="Call to Action" value={asset.callToAction} />
-                <SpecItem label="Export Filename" value={asset.filename} />
-                <SpecItem label="QC Status" value={asset.status} statusBadge />
+                <SpecItem label="Suggested filename" value={asset.filename} />
+                <SpecItem label="Design status" value={asset.status} statusBadge />
               </div>
             </div>
           </div>

@@ -62,7 +62,7 @@ npm run preview # Preview production build
 
 ## Limitations
 
-- The 12 campaign visuals are code-rendered design concept previews, not exported PNG/PDF files.
+- The gallery previews 12 campaign designs from a combined portfolio image; individual exported PNG/PDF files are not included in the website repository.
 - The 45-second video is a production storyboard and concept preview, not a filmed or playable video.
 - No backend, database, or form submission service is connected.
 - No banking services, transactions, or account features are available.

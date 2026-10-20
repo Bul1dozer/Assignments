@@ -90,7 +90,7 @@ export default function Footer({ onNavigate }: FooterProps) {
           <div className="flex flex-col md:flex-row justify-between items-start gap-4">
             <div>
               <p className="text-sm text-white font-medium">
-                {campaignInfo.studentInfo.name} (Student No: {campaignInfo.studentInfo.studentNumber})
+                {campaignInfo.studentInfo.name}
               </p>
               <p className="text-xs text-primary-300 mt-1">
                 {campaignInfo.studentInfo.course} ({campaignInfo.studentInfo.courseCode}) &middot;{' '}
