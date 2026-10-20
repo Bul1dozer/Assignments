@@ -2,7 +2,6 @@ import { useState } from 'react';
 import {
   X,
   ZoomIn,
-  Download,
   CheckCircle,
   Smartphone,
   MessageCircle,

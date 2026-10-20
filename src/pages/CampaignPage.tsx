@@ -277,7 +277,7 @@ export default function CampaignPage() {
             </span>
             <div>
               <h2 className="font-serif font-bold text-2xl text-slate-900">Asset Inventory</h2>
-              <p className="text-sm text-slate-500">Complete inventory of all 12 campaign deliverables with specifications</p>
+              <p className="text-sm text-slate-500">Specifications for all 12 campaign asset concepts</p>
             </div>
           </div>
 
@@ -305,8 +305,7 @@ export default function CampaignPage() {
                     <td className="px-3 py-3 text-slate-600 text-xs max-w-xs">{asset.message}</td>
                     <td className="px-3 py-3 text-slate-600 text-xs">{asset.format}</td>
                     <td className="px-3 py-3">
-                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-success-100 text-success-700">
-                        <CheckCircle className="w-3 h-3" />
+                      <span className="inline-flex items-center rounded-full bg-slate-100 px-2 py-1 text-[10px] font-semibold text-slate-600">
                         {asset.status}
                       </span>
                     </td>
@@ -322,8 +321,7 @@ export default function CampaignPage() {
               <div key={asset.id} className="p-4 bg-slate-50 rounded-lg">
                 <div className="flex items-start justify-between mb-2">
                   <span className="font-bold text-primary-600 text-sm">#{asset.id}</span>
-                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-success-100 text-success-700">
-                    <CheckCircle className="w-3 h-3" />
+                  <span className="inline-flex items-center rounded-full bg-slate-100 px-2 py-1 text-[10px] font-semibold text-slate-600">
                     {asset.status}
                   </span>
                 </div>
@@ -512,8 +510,8 @@ export default function CampaignPage() {
                 ))}
               </div>
 
-              <div className="mt-6 p-4 bg-warning-50 border border-warning-200 rounded-lg flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-warning-600 flex-shrink-0 mt-0.5" />
+              <div className="mt-6 flex items-start gap-3 rounded-lg border border-slate-200 bg-slate-50 p-4">
+                <FileText className="w-5 h-5 flex-shrink-0 mt-0.5 text-slate-500" />
                 <div>
                   <p className="text-sm font-bold text-slate-800 mb-1">About this storyboard</p>
                   <p className="text-xs text-slate-700 leading-relaxed">
