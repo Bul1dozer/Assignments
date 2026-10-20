@@ -1,62 +1,71 @@
-import { useEffect, useState } from 'react';
-import Header, { type PageId } from '@/components/Header';
+import { useState, useEffect, useCallback } from 'react';
+import Header, { type SectionId } from '@/components/Header';
 import Footer from '@/components/Footer';
-import HomePage from '@/pages/HomePage';
-import BankingPage from '@/pages/BankingPage';
 import CampaignPage from '@/pages/CampaignPage';
-import ContactPage from '@/pages/ContactPage';
-import ArticleView from '@/components/ArticleView';
-import { getArticleById } from '@/data/articles';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState<PageId>('home');
-  const [currentArticleId, setCurrentArticleId] = useState<string | null>(null);
+  const [activeSection, setActiveSection] = useState<SectionId>('overview');
 
-  const handleNavigate = (page: PageId, articleId?: string) => {
-    if (page === 'article' && articleId) {
-      setCurrentArticleId(articleId);
-      setCurrentPage('article');
-    } else {
-      setCurrentPage(page);
-      setCurrentArticleId(null);
+  const scrollToSection = useCallback((section: SectionId) => {
+    const el = document.getElementById(`section-${section}`);
+    if (el) {
+      const headerOffset = 80;
+      const elementPosition = el.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - headerOffset;
+      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
     }
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  }, []);
+
+  const handleNavigate = useCallback(
+    (section: SectionId) => {
+      scrollToSection(section);
+    },
+    [scrollToSection]
+  );
 
   useEffect(() => {
-    window.scrollTo({ top: 0 });
-  }, [currentPage]);
+    const sections: SectionId[] = [
+      'overview',
+      'strategy',
+      'objectives',
+      'messages',
+      'assets',
+      'inventory',
+      'storyboard',
+      'safety',
+      'about',
+      'contact',
+    ];
 
-  const renderPage = () => {
-    switch (currentPage) {
-      case 'home':
-        return <HomePage onNavigate={handleNavigate} />;
-      case 'personal':
-      case 'business':
-      case 'corporate':
-      case 'digital':
-        return <BankingPage page={currentPage} onNavigate={handleNavigate} />;
-      case 'campaign':
-        return <CampaignPage onNavigate={handleNavigate} />;
-      case 'contact':
-        return <ContactPage />;
-      case 'article': {
-        const article = currentArticleId ? getArticleById(currentArticleId) : undefined;
-        return article ? (
-          <ArticleView article={article} onNavigate={handleNavigate} />
-        ) : (
-          <HomePage onNavigate={handleNavigate} />
-        );
-      }
-      default:
-        return <HomePage onNavigate={handleNavigate} />;
-    }
-  };
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+        if (visible.length > 0) {
+          const id = visible[0].target.id.replace('section-', '') as SectionId;
+          if (sections.includes(id)) {
+            setActiveSection(id);
+          }
+        }
+      },
+      { rootMargin: '-80px 0px -50% 0px', threshold: [0, 0.25, 0.5, 0.75] }
+    );
+
+    sections.forEach((s) => {
+      const el = document.getElementById(`section-${s}`);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <div className="min-h-screen bg-white font-sans text-slate-800">
-      <Header currentPage={currentPage} onNavigate={handleNavigate} />
-      <main>{renderPage()}</main>
+    <div className="min-h-screen bg-white flex flex-col">
+      <Header onNavigate={handleNavigate} activeSection={activeSection} />
+      <main className="flex-1">
+        <CampaignPage onNavigate={handleNavigate} />
+      </main>
       <Footer onNavigate={handleNavigate} />
     </div>
   );

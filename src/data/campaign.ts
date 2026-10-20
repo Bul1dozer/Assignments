@@ -14,7 +14,6 @@ export interface CampaignAsset {
 }
 
 export const campaignInfo = {
-  publicationName: 'The Namibian Times',
   campaignTitle: 'Banking Where You Are',
   tagline: 'Your bank. Your life. Your way.',
   institution: 'Bank Windhoek',
@@ -64,7 +63,7 @@ export const campaignInfo = {
   ],
   brandColors: {
     primary: '#0033A0',
-    accent: '#E30613',
+    accent: '#E8A020',
     white: '#FFFFFF',
     dark: '#001133',
   },
@@ -81,10 +80,6 @@ export const campaignInfo = {
   contact: {
     email: '200965085@students.unam.na',
     phone: '0816270080',
-    website: 'www.bankwindhoek.com.na',
-    facebook: 'facebook.com/bankwindhoek',
-    instagram: 'instagram.com/bankwindhoek',
-    twitter: 'x.com/bankwindhoek',
   },
 };
 
@@ -196,7 +191,7 @@ export const campaignAssets: CampaignAsset[] = [
     format: 'Print-ready PDF',
     dimensions: 'A4 (210 \u00d7 297 mm, 300 DPI)',
     message: 'The future of banking is where you are.',
-    callToAction: 'Visit www.bankwindhoek.com.na to learn more.',
+    callToAction: 'Explore the Banking Where You Are campaign.',
     filename: '08_print_advertisement.pdf',
     status: 'Complete',
     caption: 'A full-page print advertisement designed for newspaper placement, combining the campaign narrative, WhatsApp Banking highlight, and Bank Windhoek institutional branding at print resolution with proper margins and bleed.',
@@ -238,7 +233,7 @@ export const campaignAssets: CampaignAsset[] = [
     format: 'Print-ready PDF',
     dimensions: '850 \u00d7 2000 mm (vertical, 300 DPI)',
     message: 'Banking Where You Are \u2014 A Bank Windhoek Campaign',
-    callToAction: 'Visit www.bankwindhoek.com.na',
+    callToAction: 'Your bank. Your life. Your way.',
     filename: '11_pullup_banner.pdf',
     status: 'Complete',
     caption: 'A pull-up banner design for use at community events, branch launches, and public engagements, featuring the full campaign identity, digital channel highlights, and Bank Windhoek institutional branding.',
@@ -311,9 +306,9 @@ export const multimediaScript = {
     },
     {
       time: '0:42\u20130:45',
-      shot: 'End card persists. Small text: "Bank Windhoek. www.bankwindhoek.com.na"',
+      shot: 'End card persists. Small text: "Bank Windhoek. Banking Where You Are."',
       narration: '(Music resolves. No narration.)',
-      subtitle: 'Visit www.bankwindhoek.com.na',
+      subtitle: 'Banking Where You Are.',
     },
   ],
   productionNotes: {
